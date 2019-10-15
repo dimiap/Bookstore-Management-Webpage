@@ -1,0 +1,57 @@
+﻿@model Ergasia.Models.discounts
+
+@{
+    ViewBag.Title = "Details about the discount";
+}
+
+<h2>Details about the discount</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.discounttype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discounttype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stores.stor_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stores.stor_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lowqty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lowqty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.highqty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.highqty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id1 = Model.discounttype, id2= Model.stor_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

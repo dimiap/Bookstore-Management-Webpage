@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Ergasia.Models.discounts>
+
+@{
+    ViewBag.Title = "Discounts";
+}
+
+<h2>Discounts</h2>
+
+<p>
+    @Html.ActionLink("Add New Discounts", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.discounttype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stores.stor_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lowqty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.highqty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.discount)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.discounttype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stores.stor_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lowqty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.highqty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.discount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id1 = item.discounttype, id2 = item.stor_id })
+                @Html.ActionLink("Details", "Details", new { id1 = item.discounttype, id2 = item.stor_id })
+                @Html.ActionLink("Delete", "Delete", new { id1 = item.discounttype, id2 = item.stor_id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model Ergasia.Models.sales
+
+@{
+    ViewBag.Title = "Details of the sale";
+}
+
+<h2>Details of the sale</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.titles.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titles.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ord_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ord_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.payterms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.payterms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stores.stor_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stores.stor_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.stor_id + ',' + Model.ord_num + ',' + Model.title_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

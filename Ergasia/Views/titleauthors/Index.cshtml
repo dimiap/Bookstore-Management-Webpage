@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Ergasia.Models.titleauthor>
+
+@{
+    ViewBag.Title = "Information about the authors and their books";
+}
+
+<h2>The Information about the authors and their books</h2>
+
+<p>
+    @Html.ActionLink("Add New Information", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.authors.au_fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.authors.au_lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.titles.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.au_ord)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.royaltyper)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.authors.au_fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.authors.au_lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.titles.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.au_ord)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.royaltyper)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = @item.au_id + ',' + @item.title_id }) |
+                @Html.ActionLink("Details", "Details", new { id = @item.au_id + ',' + @item.title_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = @item.au_id + ',' + @item.title_id })
+            </td>
+        </tr>
+    }
+
+</table>

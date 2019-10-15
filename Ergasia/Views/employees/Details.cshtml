@@ -1,0 +1,82 @@
+﻿@model Ergasia.Models.employee
+
+@{
+    ViewBag.Title = "Employees details";
+}
+
+<h2>Employees details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.minit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.minit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobs.job_desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobs.job_desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.job_lvl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.job_lvl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.publishers.pub_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publishers.pub_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hire_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hire_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.emp_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
